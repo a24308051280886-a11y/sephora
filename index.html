@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SEPHORA MX - Tienda de Cosméticos</title>
+</head>
+<body bgcolor="#FFF8F0" text="#333333" link="#B85D75" vlink="#8B4255" alink="#FF0000">
+    <table width="100%" border="0" cellpadding="10" bgcolor="#2C1820">
+        <tr>
+            <td align="left">
+                <h1><font color="#FFFFFF" face="Arial, sans-serif">SEPHORA MX</font></h1>
+                <small><font color="#E8C5B0" face="Arial">Tienda de Cosméticos en Pesos Mexicanos ($ MXN)</font></small>
+            </td>
+            <td align="right">
+                <font face="Arial" color="#FFFFFF">
+                    <a href="#catalogo"><font color="#E8C5B0">Catálogo</font></a> | 
+                    <a href="#registro"><font color="#E8C5B0">Registrarse</font></a> | 
+                    <a href="#login"><font color="#E8C5B0">Iniciar Sesión</font></a>
+                </font>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const msg = params.get('msg');
+        const type = params.get('type');
+        if (msg) {
+            const colorFondo = (type === 'exito') ? '#D4EDDA' : '#F8D7DA';
+            const colorTexto = (type === 'exito') ? '#155724' : '#721C24';
+            const colorBorde = (type === 'exito') ? '#C3E6CB' : '#F5C6CB';
+            document.write(`
+                <table width="100%" border="1" cellpadding="15" bgcolor="${colorFondo}" bordercolor="${colorBorde}">
+                    <tr>
+                        <td align="center">
+                            <b><font face="Arial" color="${colorTexto}" size="4">${msg}</font></b>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+            `);
+        }
+    </script>
+
+    <!-- MENSAJE DE BIENVENIDA -->
+    <table width="100%" border="0" cellpadding="15" bgcolor="#F4E3D7">
+        <tr>
+            <td align="center">
+                <h2><font face="Arial" color="#2C1820">¡Bienvenid@ a SEPHORA MX!</font></h2>
+                <p><font face="Arial">Encuentra los mejores productos de maquillaje, skincare y labiales.</font></p>
+                <p><b><font face="Arial" color="#B85D75">Envío Gratis en compras mayores a $1,200.00 MXN</font></b></p>
+            </td>
+        </tr>
+    </table>
+    <br><hr><br>
+    <a name="catalogo"></a>
+    <h2 align="center"><font face="Arial" color="#2C1820">Catálogo de Cosméticos Destacados</font></h2>
+    <table width="100%" border="1" cellpadding="10" cellspacing="0" bordercolor="#E8C5B0">
+        <tr bgcolor="#2C1820">
+            <th><font color="#FFFFFF" face="Arial">Imagen</font></th>
+            <th><font color="#FFFFFF" face="Arial">Producto</font></th>
+            <th><font color="#FFFFFF" face="Arial">Marca</font></th>
+            <th><font color="#FFFFFF" face="Arial">Categoría</font></th>
+            <th><font color="#FFFFFF" face="Arial">Precio ($ MXN)</font></th>
+            <th><font color="#FFFFFF" face="Arial">Acción</font></th>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td align="center" width="120">
+                <img src="blush.png" alt="Soft Pinch Liquid Blush" width="100" height="100">
+            </td>
+            <td>
+                <b><font face="Arial" size="3">Soft Pinch Liquid Blush</font></b><br>
+                <small><font face="Arial" color="#666666">Rubor líquido de alta pigmentación y larga duración.</font></small>
+            </td>
+            <td align="center"><b><font face="Arial">Rare Beauty</font></b></td>
+            <td align="center"><font face="Arial">Maquillaje</font></td>
+            <td align="center"><b><font face="Arial" color="#B85D75">$590.00 MXN</font></b></td>
+            <td align="center">
+                <form action="api.php" method="POST">
+                    <input type="hidden" name="action" value="agregar_carrito">
+                    <input type="hidden" name="producto_id" value="1">
+                    <input type="submit" value="Comprar Ahora">
+                </form>
+            </td>
+        </tr>
+        <tr bgcolor="#FFF8F0">
+            <td align="center" width="120">
+                <img src="gloss.png" alt="Gloss Bomb Universal" width="100" height="100">
+            </td>
+            <td>
+                <b><font face="Arial" size="3">Gloss Bomb Universal Lip Luminizer</font></b><br>
+                <small><font face="Arial" color="#666666">Brillo labial explosivo con textura no pegajosa.</font></small>
+            </td>
+            <td align="center"><b><font face="Arial">Fenty Beauty</font></b></td>
+            <td align="center"><font face="Arial">Labiales</font></td>
+            <td align="center"><b><font face="Arial" color="#B85D75">$480.00 MXN</font></b></td>
+            <td align="center">
+                <form action="api.php" method="POST">
+                    <input type="hidden" name="action" value="agregar_carrito">
+                    <input type="hidden" name="producto_id" value="2">
+                    <input type="submit" value="Comprar Ahora">
+                </form>
+            </td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td align="center" width="120">
+                <img src="base.png" alt="Hollywood Flawless Filter" width="100" height="100">
+            </td>
+            <td>
+                <b><font face="Arial" size="3">Hollywood Flawless Filter</font></b><br>
+                <small><font face="Arial" color="#666666">Base iluminadora con efecto filtro perfeccionador.</font></small>
+            </td>
+            <td align="center"><b><font face="Arial">Charlotte Tilbury</font></b></td>
+            <td align="center"><font face="Arial">Maquillaje</font></td>
+            <td align="center"><b><font face="Arial" color="#B85D75">$980.00 MXN</font></b></td>
+            <td align="center">
+                <form action="api.php" method="POST">
+                    <input type="hidden" name="action" value="agregar_carrito">
+                    <input type="hidden" name="producto_id" value="3">
+                    <input type="submit" value="Comprar Ahora">
+                </form>
+            </td>
+        </tr>
+        <tr bgcolor="#FFF8F0">
+            <td align="center" width="120">
+                <img src="crema.png" alt="Brazilian Bum Bum Cream" width="100" height="100">
+            </td>
+            <td>
+                <b><font face="Arial" size="3">Brazilian Bum Bum Cream 240ml</font></b><br>
+                <small><font face="Arial" color="#666666">Crema corporal reafirmante e hidratante.</font></small>
+            </td>
+            <td align="center"><b><font face="Arial">Sol de Janeiro</font></b></td>
+            <td align="center"><font face="Arial">Skincare</font></td>
+            <td align="center"><b><font face="Arial" color="#B85D75">$1,150.00 MXN</font></b></td>
+            <td align="center">
+                <form action="api.php" method="POST">
+                    <input type="hidden" name="action" value="agregar_carrito">
+                    <input type="hidden" name="producto_id" value="4">
+                    <input type="submit" value="Comprar Ahora">
+                </form>
+            </td>
+        </tr>
+    </table>
+    <br><hr><br>
+    <table width="100%" border="0" cellpadding="10" cellspacing="10">
+        <tr>
+            <td width="50%" valign="top" bgcolor="#FFFFFF">
+                <a name="registro"></a>
+                <table width="100%" border="1" cellpadding="10" cellspacing="0" bordercolor="#E8C5B0">
+                    <tr bgcolor="#2C1820">
+                        <td align="center">
+                            <h3><font color="#FFFFFF" face="Arial">Crear Cuenta Nueva</font></h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form action="auth.php?action=registro" method="POST">
+                                <font face="Arial">
+                                    <label for="reg_nombre"><b>Nombre Completo:</b></label><br>
+                                    <input type="text" id="reg_nombre" name="nombre" required><br><br>
+
+                                    <label for="reg_email"><b>Correo Electrónico:</b></label><br>
+                                    <input type="email" id="reg_email" name="email" required><br><br>
+
+                                    <label for="reg_password"><b>Contraseña:</b></label><br>
+                                    <input type="password" id="reg_password" name="password" required><br><br>
+
+                                    <label for="reg_telefono"><b>Teléfono:</b></label><br>
+                                    <input type="tel" id="reg_telefono" name="telefono"><br><br>
+
+                                    <label for="reg_direccion"><b>Dirección de Envío:</b></label><br>
+                                    <textarea id="reg_direccion" name="direccion" rows="3" cols="30"></textarea><br><br>
+
+                                    <input type="submit" value="Registrarse">
+                                </font>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="50%" valign="top" bgcolor="#FFFFFF">
+                <a name="login"></a>
+                <table width="100%" border="1" cellpadding="10" cellspacing="0" bordercolor="#E8C5B0">
+                    <tr bgcolor="#2C1820">
+                        <td align="center">
+                            <h3><font color="#FFFFFF" face="Arial">Iniciar Sesión</font></h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form action="auth.php?action=login" method="POST">
+                                <font face="Arial">
+                                    <label for="login_email"><b>Correo Electrónico:</b></label><br>
+                                    <input type="email" id="login_email" name="email" required><br><br>
+
+                                    <label for="login_password"><b>Contraseña:</b></label><br>
+                                    <input type="password" id="login_password" name="password" required><br><br>
+
+                                    <input type="submit" value="Ingresar al Sistema">
+                                </font>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <table width="100%" border="0" cellpadding="10" bgcolor="#2C1820">
+        <tr>
+            <td align="center">
+                <font color="#E8C5B0" face="Arial" size="2">
+                    &copy; LUXE BEAUTY MX - Sistema E-Commerce de Cosméticos en PHP + MySQL.
+                </font>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
